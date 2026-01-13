@@ -1,0 +1,8 @@
+{
+  "name": "Soluease Landing Page",
+  "description": "A high-end, animated landing page for Soluease, a software house in Batam, Indonesia, focused on providing digital solutions with ease.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
