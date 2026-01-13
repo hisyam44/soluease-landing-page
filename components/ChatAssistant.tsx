@@ -1,15 +1,20 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageSquare, X, Send, Bot } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
+import { useLanguage } from '../context/LanguageContext';
 
 export const ChatAssistant: React.FC = () => {
+  const { t, lang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
-  const [chatHistory, setChatHistory] = useState<{role: 'user' | 'bot', text: string}[]>([
-    { role: 'bot', text: "Hi! I'm SoluBot. How can Soluease help you find 'ease' in your digital journey today?" }
-  ]);
+  const [chatHistory, setChatHistory] = useState<{role: 'user' | 'bot', text: string}[]>([]);
   const [loading, setLoading] = useState(false);
+
+  // Initialize welcome message when language changes
+  useEffect(() => {
+    setChatHistory([{ role: 'bot', text: t.chat.welcome }]);
+  }, [lang]);
 
   const handleSend = async () => {
     if (!message.trim() || loading) return;
@@ -25,14 +30,14 @@ export const ChatAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: userMsg,
         config: {
-          systemInstruction: "You are SoluBot, an AI assistant for Soluease, a software house in Batam, Indonesia. Your mission is to explain how Soluease makes tech easy. Be friendly, professional, and highlight our Batam roots. Keep responses concise.",
+          systemInstruction: t.chat.systemInstruction,
         }
       });
       
-      const botResponse = response.text || "I'm sorry, I'm having trouble connecting right now. Let me find a human for you!";
+      const botResponse = response.text || t.chat.botFail;
       setChatHistory(prev => [...prev, { role: 'bot', text: botResponse }]);
     } catch (err) {
-      setChatHistory(prev => [...prev, { role: 'bot', text: "Error connecting to server. Please try again later." }]);
+      setChatHistory(prev => [...prev, { role: 'bot', text: t.chat.error }]);
     } finally {
       setLoading(false);
     }
@@ -52,7 +57,7 @@ export const ChatAssistant: React.FC = () => {
                 <h4 className="font-bold text-lg">SoluBot</h4>
                 <div className="flex items-center gap-1.5 text-xs text-cyan-50">
                   <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                  Online - Always Easy
+                  {t.chat.online}
                 </div>
               </div>
             </div>
@@ -93,7 +98,7 @@ export const ChatAssistant: React.FC = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Ask me anything..."
+                placeholder={t.chat.placeholder}
                 className="flex-1 bg-slate-100 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-[#1d97c1] outline-none"
               />
               <button 
@@ -116,7 +121,7 @@ export const ChatAssistant: React.FC = () => {
             1
           </span>
           <div className="absolute right-20 bg-white text-slate-900 px-4 py-2 rounded-xl text-sm font-bold shadow-xl border border-slate-100 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            Need help? Let's talk!
+            {lang === 'en' ? "Need help? Let's talk!" : "Butuh bantuan? Mari bicara!"}
           </div>
         </button>
       )}

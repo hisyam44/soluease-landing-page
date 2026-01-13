@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer id="footer" className="bg-slate-900 text-slate-300 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +20,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="leading-relaxed">
-              Batam's premier software house providing digital solutions with ease. 
-              Built for speed, efficiency, and reliability.
+              {t.footer.tagline}
             </p>
             <div className="flex gap-4">
               {[Instagram, Linkedin, Twitter].map((Icon, i) => (
@@ -30,31 +32,29 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg font-heading">Company</h4>
+            <h4 className="text-white font-bold mb-6 text-lg font-heading">{t.footer.company}</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">Our Team</a></li>
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">Press Kit</a></li>
+              {t.footer.links.map((link: string) => (
+                <li key={link}><a href="#" className="hover:text-[#1d97c1] transition-colors">{link}</a></li>
+              ))}
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg font-heading">Services</h4>
+            <h4 className="text-white font-bold mb-6 text-lg font-heading">{t.footer.services}</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">Mobile Engineering</a></li>
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">Cloud Consulting</a></li>
-              <li><a href="#" className="hover:text-[#1d97c1] transition-colors">UI/UX Design</a></li>
+              {t.footer.serviceLinks.map((link: string) => (
+                <li key={link}><a href="#" className="hover:text-[#1d97c1] transition-colors">{link}</a></li>
+              ))}
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg font-heading">Get in Touch</h4>
+            <h4 className="text-white font-bold mb-6 text-lg font-heading">{t.footer.getInTouch}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#1d97c1] mt-1" />
-                <span>Nagoya, Batam City, <br />Riau Islands, Indonesia</span>
+                <span>{t.footer.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#1d97c1]" />
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Soluease (PT. Solusi Digital Ease). All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Soluease (PT. Solusi Digital Ease). {t.footer.rights}</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>

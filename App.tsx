@@ -8,8 +8,9 @@ import { Portfolio } from './components/Portfolio';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 import { ChatAssistant } from './components/ChatAssistant';
+import { LanguageProvider } from './context/LanguageContext';
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -33,6 +34,14 @@ const App: React.FC = () => {
       <Footer />
       <ChatAssistant />
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 };
 

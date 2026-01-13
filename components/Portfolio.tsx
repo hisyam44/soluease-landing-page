@@ -1,18 +1,21 @@
 
 import React from 'react';
 import { ExternalLink, Tag } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Portfolio: React.FC = () => {
+  const { t, lang } = useLanguage();
+  
   const projects = [
     {
-      title: 'Batam Logistic Hub',
-      category: 'Enterprise SaaS',
+      title: lang === 'en' ? 'Batam Logistic Hub' : 'Hub Logistik Batam',
+      category: lang === 'en' ? 'Enterprise SaaS' : 'SaaS Perusahaan',
       image: 'https://picsum.photos/seed/port1/800/600',
       tags: ['React', 'Node.js', 'PostgreSQL']
     },
     {
       title: 'EcoEase Travel App',
-      category: 'Mobile Application',
+      category: lang === 'en' ? 'Mobile Application' : 'Aplikasi Mobile',
       image: 'https://picsum.photos/seed/port2/800/600',
       tags: ['Flutter', 'Firebase', 'Maps API']
     },
@@ -29,13 +32,13 @@ export const Portfolio: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4 font-heading">Our Recent Works</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4 font-heading">{t.portfolio.title}</h2>
             <p className="text-lg text-slate-600">
-              A glimpse into the digital transformations we've orchestrated for clients in Indonesia and beyond.
+              {t.portfolio.subtitle}
             </p>
           </div>
           <button className="bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-800 transition-all flex items-center gap-2">
-            View All Work
+            {t.portfolio.viewAll}
             <ExternalLink className="w-4 h-4" />
           </button>
         </div>

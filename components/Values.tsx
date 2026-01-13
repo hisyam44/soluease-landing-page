@@ -1,13 +1,11 @@
 
 import React from 'react';
-import { CheckCircle2, Zap, Layout, Smile } from 'lucide-react';
+import { Zap, Layout, Smile } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Values: React.FC = () => {
-  const points = [
-    { icon: Zap, title: 'Zero Friction', desc: 'We handle the technical complexity so you don\'t have to.' },
-    { icon: Layout, title: 'Intuitive Design', desc: 'UI/UX that feels natural and requires zero learning curve.' },
-    { icon: Smile, title: 'Stress-Free Delivery', desc: 'Transparent updates and milestones delivered on time.' },
-  ];
+  const { t } = useLanguage();
+  const icons = [Zap, Layout, Smile];
 
   return (
     <section id="values" className="py-24 bg-white">
@@ -27,27 +25,28 @@ export const Values: React.FC = () => {
           
           <div className="lg:w-1/2">
             <h2 className="text-4xl font-bold text-slate-900 mb-6 font-heading leading-tight">
-              Why "Ease" Is Our Core <br />
-              <span className="text-[#1d97c1]">Digital Philosophy</span>
+              {t.values.titlePrefix} <br />
+              <span className="text-[#1d97c1]">{t.values.titleSuffix}</span>
             </h2>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              In a world where technology moves fast, we believe simplicity is the ultimate sophistication. 
-              Our Batam-based team focuses on stripping away the unnecessary, leaving you with software 
-              that just works.
+              {t.values.description}
             </p>
             
             <div className="space-y-6">
-              {points.map((point, i) => (
-                <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center">
-                    <point.icon className="w-6 h-6 text-[#1d97c1]" />
+              {t.values.points.map((point: any, i: number) => {
+                const Icon = icons[i];
+                return (
+                  <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-[#1d97c1]" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-1">{point.title}</h3>
+                      <p className="text-slate-600">{point.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-1">{point.title}</h3>
-                    <p className="text-slate-600">{point.desc}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
