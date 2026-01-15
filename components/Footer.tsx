@@ -1,7 +1,13 @@
-
-import React from 'react';
-import { Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -12,45 +18,69 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#1d97c1] rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Soluease Logo"
+                className="w-10 h-10 rounded-xl"
+              />
               <span className="text-2xl font-bold tracking-tight text-white font-heading">
                 Solu<span className="text-[#1d97c1]">ease</span>
               </span>
             </div>
-            <p className="leading-relaxed">
-              {t.footer.tagline}
-            </p>
+            <p className="leading-relaxed">{t.footer.tagline}</p>
             <div className="flex gap-4">
               {[Instagram, Linkedin, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-[#1d97c1] hover:text-white transition-colors">
+                <a
+                  key={i}
+                  href="#"
+                  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-[#1d97c1] hover:text-white transition-colors"
+                >
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
           </div>
-          
+
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg font-heading">{t.footer.company}</h4>
+            <h4 className="text-white font-bold mb-6 text-lg font-heading">
+              {t.footer.company}
+            </h4>
             <ul className="space-y-4">
               {t.footer.links.map((link: string) => (
-                <li key={link}><a href="#" className="hover:text-[#1d97c1] transition-colors">{link}</a></li>
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="hover:text-[#1d97c1] transition-colors"
+                  >
+                    {link}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg font-heading">{t.footer.services}</h4>
+            <h4 className="text-white font-bold mb-6 text-lg font-heading">
+              {t.footer.services}
+            </h4>
             <ul className="space-y-4">
               {t.footer.serviceLinks.map((link: string) => (
-                <li key={link}><a href="#" className="hover:text-[#1d97c1] transition-colors">{link}</a></li>
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="hover:text-[#1d97c1] transition-colors"
+                  >
+                    {link}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg font-heading">{t.footer.getInTouch}</h4>
+            <h4 className="text-white font-bold mb-6 text-lg font-heading">
+              {t.footer.getInTouch}
+            </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#1d97c1] mt-1" />
@@ -58,21 +88,27 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#1d97c1]" />
-                <span>+62 778 123 4567</span>
+                <span>+62 853-2981-1585</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#1d97c1]" />
-                <span>hello@soluease.com</span>
+                <span>soluease@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Soluease (PT. Solusi Digital Ease). {t.footer.rights}</p>
+          <p>
+            © {new Date().getFullYear()} Soluease. {t.footer.rights}
+          </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
+            <a href="#" className="hover:text-white">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

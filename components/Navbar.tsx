@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { Menu, X, ArrowRight, Languages } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { Menu, X, ArrowRight, Languages } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -12,25 +11,29 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   const { lang, t, setLanguage } = useLanguage();
 
   const navLinks = [
-    { name: t.nav.solutions, href: '#services' },
-    { name: t.nav.portfolio, href: '#portfolio' },
-    { name: t.nav.values, href: '#values' },
-    { name: t.nav.about, href: '#footer' },
+    { name: t.nav.solutions, href: "#services" },
+    { name: t.nav.portfolio, href: "#portfolio" },
+    { name: t.nav.values, href: "#values" },
+    { name: t.nav.about, href: "#footer" },
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
+        scrolled
+          ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#1d97c1] rounded-xl flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform">
-                <span className="text-white font-bold text-xl -rotate-12">S</span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Soluease Logo"
+                className="w-10 h-10 rounded-xl"
+              />
               <span className="text-2xl font-bold tracking-tight text-slate-900 font-heading">
                 Solu<span className="text-[#1d97c1]">ease</span>
               </span>
@@ -50,18 +53,26 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 </a>
               ))}
             </div>
-            
+
             {/* Language Switcher */}
             <div className="flex items-center bg-slate-100 p-1 rounded-full border border-slate-200">
-              <button 
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${lang === 'en' ? 'bg-white text-[#1d97c1] shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                  lang === "en"
+                    ? "bg-white text-[#1d97c1] shadow-sm"
+                    : "text-slate-400 hover:text-slate-600"
+                }`}
               >
                 EN
               </button>
-              <button 
-                onClick={() => setLanguage('id')}
-                className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${lang === 'id' ? 'bg-white text-[#1d97c1] shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
+              <button
+                onClick={() => setLanguage("id")}
+                className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                  lang === "id"
+                    ? "bg-white text-[#1d97c1] shadow-sm"
+                    : "text-slate-400 hover:text-slate-600"
+                }`}
               >
                 ID
               </button>
@@ -75,8 +86,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-4">
-            <button 
-              onClick={() => setLanguage(lang === 'en' ? 'id' : 'en')}
+            <button
+              onClick={() => setLanguage(lang === "en" ? "id" : "en")}
               className="p-2 text-slate-600 hover:text-[#1d97c1] bg-slate-100 rounded-lg"
             >
               <Languages className="w-5 h-5" />
@@ -85,7 +96,11 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 hover:text-slate-900 p-2"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -106,11 +121,27 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               </a>
             ))}
             <div className="flex items-center justify-between px-3 py-4">
-               <span className="text-slate-500 font-medium">Language / Bahasa</span>
-               <div className="flex bg-slate-100 p-1 rounded-lg">
-                <button onClick={() => setLanguage('en')} className={`px-4 py-2 rounded-md font-bold ${lang === 'en' ? 'bg-white text-[#1d97c1]' : 'text-slate-400'}`}>EN</button>
-                <button onClick={() => setLanguage('id')} className={`px-4 py-2 rounded-md font-bold ${lang === 'id' ? 'bg-white text-[#1d97c1]' : 'text-slate-400'}`}>ID</button>
-               </div>
+              <span className="text-slate-500 font-medium">
+                Language / Bahasa
+              </span>
+              <div className="flex bg-slate-100 p-1 rounded-lg">
+                <button
+                  onClick={() => setLanguage("en")}
+                  className={`px-4 py-2 rounded-md font-bold ${
+                    lang === "en" ? "bg-white text-[#1d97c1]" : "text-slate-400"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLanguage("id")}
+                  className={`px-4 py-2 rounded-md font-bold ${
+                    lang === "id" ? "bg-white text-[#1d97c1]" : "text-slate-400"
+                  }`}
+                >
+                  ID
+                </button>
+              </div>
             </div>
             <button className="w-full mt-4 bg-[#1d97c1] text-white px-6 py-4 rounded-xl font-bold flex justify-center items-center gap-2">
               {t.nav.getStarted}
