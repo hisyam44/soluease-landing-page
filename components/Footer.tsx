@@ -29,10 +29,19 @@ export const Footer: React.FC = () => {
             </div>
             <p className="leading-relaxed">{t.footer.tagline}</p>
             <div className="flex gap-4">
-              {[Instagram, Linkedin, Twitter].map((Icon, i) => (
+              {[
+                { Icon: Instagram, url: "https://instagram.com/soluease" },
+                {
+                  Icon: Linkedin,
+                  url: "https://linkedin.com/company/soluease",
+                },
+                { Icon: Twitter, url: "https://twitter.com/soluease" },
+              ].map(({ Icon, url }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-[#1d97c1] hover:text-white transition-colors"
                 >
                   <Icon className="w-5 h-5" />
@@ -46,16 +55,32 @@ export const Footer: React.FC = () => {
               {t.footer.company}
             </h4>
             <ul className="space-y-4">
-              {t.footer.links.map((link: string) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="hover:text-[#1d97c1] transition-colors"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {t.footer.links.map((link: string, idx: number) => {
+                const links: { [key: number]: string } = {
+                  0: "#services",
+                  1: "#portfolio",
+                  2: "#values",
+                };
+                return (
+                  <li key={link}>
+                    <a
+                      href={links[idx] || "#"}
+                      onClick={(e) => {
+                        if (links[idx]) {
+                          e.preventDefault();
+                          const el = document.getElementById(
+                            links[idx].replace("#", "")
+                          );
+                          if (el) el.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className="hover:text-[#1d97c1] transition-colors cursor-pointer"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -67,8 +92,14 @@ export const Footer: React.FC = () => {
               {t.footer.serviceLinks.map((link: string) => (
                 <li key={link}>
                   <a
-                    href="#"
-                    className="hover:text-[#1d97c1] transition-colors"
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const services = document.getElementById("services");
+                      if (services)
+                        services.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="hover:text-[#1d97c1] transition-colors cursor-pointer"
                   >
                     {link}
                   </a>
@@ -103,10 +134,10 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Soluease. {t.footer.rights}
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">
+            <a href="/privacy" className="hover:text-white">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="/terms" className="hover:text-white">
               Terms of Service
             </a>
           </div>

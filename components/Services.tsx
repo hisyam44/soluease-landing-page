@@ -45,10 +45,18 @@ export const Services: React.FC = () => {
                 <p className="text-slate-600 leading-relaxed mb-6">
                   {service.desc}
                 </p>
-                <button className="text-[#1d97c1] font-bold flex items-center gap-2 group/btn">
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const footer = document.getElementById("footer");
+                    if (footer) footer.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="text-[#1d97c1] font-bold flex items-center gap-2 group/btn cursor-pointer"
+                >
                   {t.services.learnMore}
                   <span className="w-6 h-0.5 bg-[#1d97c1] scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left"></span>
-                </button>
+                </a>
               </div>
             );
           })}

@@ -1,0 +1,41 @@
+{
+  "Data": {
+    "userdb_add": {
+      "UserRole": "guest",
+      "UserEmail": "MAIL-496620@gmail.com",
+      "mode": false,
+      "g_fullname": "USER-TABLET",
+      "g_company": "SBM BATAM",
+      "g_phone": "081234567890",
+      "g_comments": "",
+      "sp_name": "SBMAPI",
+      "sp_email": "MAIL-496620@gmail.com",
+      "sp_fullname": "SBMAPI",
+      "sp_dept": "INFR",
+      "opt1": "",
+      "opt2": "",
+      "opt3": "",
+      "opt4": "",
+      "start_day": "01/01/2023",
+      "start_time": "07:00",
+      "expiry": true,
+      "expmins": "",
+      "expday": "01/16/2026",
+      "exptime": "23:59",
+      "remote_ip": "",
+      "name": "496620",
+      "passwd": "463221",
+      "_result": {
+        "_Result": null
+      }
+    },
+    "_global_result": {
+      "Status": 0,
+      "StatusStr": "User 496620 successfully added to local-userdb\n",
+      "Uidaruba": null,
+      "XCsrfToken": null
+    }
+  },
+  "Message": "Success",
+  "Success": true
+}

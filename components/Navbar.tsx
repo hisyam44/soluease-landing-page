@@ -28,7 +28,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="flex items-center space-x-2">
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <img
                 src="/logo.png"
                 alt="Soluease Logo"
@@ -78,10 +85,18 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               </button>
             </div>
 
-            <button className="bg-[#1d97c1] hover:bg-[#167da1] text-white px-6 py-2.5 rounded-full font-semibold transition-all flex items-center gap-2 group shadow-lg shadow-cyan-500/20">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const footer = document.getElementById("footer");
+                if (footer) footer.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-[#1d97c1] hover:bg-[#167da1] text-white px-6 py-2.5 rounded-full font-semibold transition-all flex items-center gap-2 group shadow-lg shadow-cyan-500/20 cursor-pointer"
+            >
               {t.nav.getStarted}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -143,10 +158,19 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 </button>
               </div>
             </div>
-            <button className="w-full mt-4 bg-[#1d97c1] text-white px-6 py-4 rounded-xl font-bold flex justify-center items-center gap-2">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                const footer = document.getElementById("footer");
+                if (footer) footer.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full mt-4 bg-[#1d97c1] text-white px-6 py-4 rounded-xl font-bold flex justify-center items-center gap-2 cursor-pointer"
+            >
               {t.nav.getStarted}
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
       )}

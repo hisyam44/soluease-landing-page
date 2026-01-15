@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { ArrowRight, Code2, Rocket, ShieldCheck } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { ArrowRight, Code2, Rocket, ShieldCheck } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -21,29 +20,55 @@ export const Hero: React.FC = () => {
               {t.hero.badge}
             </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-[1.1] mb-6 font-heading">
-            {t.hero.title1} <br /> 
+            {t.hero.title1} <br />
             <span className="text-[#1d97c1] relative">
               {t.hero.title2}
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 358 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 10C50 3 150 3 356 10" stroke="#1d97c1" strokeWidth="4" strokeLinecap="round" />
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 358 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 10C50 3 150 3 356 10"
+                  stroke="#1d97c1"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
           </h1>
-          
+
           <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
             {t.hero.description}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-8 py-4 bg-[#1d97c1] hover:bg-[#167da1] text-white rounded-2xl font-bold text-lg transition-all shadow-xl shadow-cyan-500/20 flex items-center justify-center gap-2 group">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const footer = document.getElementById("footer");
+                if (footer) footer.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full sm:w-auto px-8 py-4 bg-[#1d97c1] hover:bg-[#167da1] text-white rounded-2xl font-bold text-lg transition-all shadow-xl shadow-cyan-500/20 flex items-center justify-center gap-2 group cursor-pointer"
+            >
               {t.hero.ctaPrimary}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 hover:border-[#1d97c1] hover:text-[#1d97c1] rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+            </a>
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                const services = document.getElementById("services");
+                if (services) services.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 hover:border-[#1d97c1] hover:text-[#1d97c1] rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
               {t.hero.ctaSecondary}
-            </button>
+            </a>
           </div>
         </div>
 
@@ -52,11 +77,16 @@ export const Hero: React.FC = () => {
           {t.hero.features.map((item: any, i: number) => {
             const Icon = icons[i];
             return (
-              <div key={i} className="bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-slate-100 hover:border-[#1d97c1]/30 transition-all hover:shadow-xl group">
+              <div
+                key={i}
+                className="bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-slate-100 hover:border-[#1d97c1]/30 transition-all hover:shadow-xl group"
+              >
                 <div className="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#1d97c1] transition-colors">
                   <Icon className="w-7 h-7 text-[#1d97c1] group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 font-heading">{item.title}</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 font-heading">
+                  {item.title}
+                </h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
             );
