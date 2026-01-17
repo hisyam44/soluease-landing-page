@@ -28,14 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="flex items-center space-x-2 cursor-pointer"
-            >
+            <a href="/" className="flex items-center space-x-2 cursor-pointer">
               <img
                 src="/logo.png"
                 alt="Soluease Logo"
