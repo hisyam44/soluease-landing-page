@@ -7,40 +7,26 @@ export const Portfolio: React.FC = () => {
 
   const projects = [
     {
-      title: lang === "en" ? "Batam Logistic Hub" : "Hub Logistik Batam",
-      category: lang === "en" ? "Enterprise SaaS" : "SaaS Perusahaan",
-      image: "https://picsum.photos/seed/port1/800/600",
-      tags: ["React", "Node.js", "PostgreSQL"],
+      title:
+        lang === "en" ? "Eventeevo Mobile App" : "Eventeevo Aplikasi Mobile",
+      category: lang === "en" ? "Mobile Apps" : "Aplikasi Mobile",
+      image: "https://app.soluease.com/uploads/Frame_19_1_7c41d144b1.png",
+      tags: ["Mobile Apps", "Google Play Store", "Apple Store"],
+      link: "https://eventeevo.com",
     },
     {
-      title: "EcoEase Travel App",
-      category: lang === "en" ? "Mobile Application" : "Aplikasi Mobile",
-      image: "https://picsum.photos/seed/port2/800/600",
-      tags: ["Flutter", "Firebase", "Maps API"],
+      title: "ChatReply Desktop App",
+      category: lang === "en" ? "Desktop Apps" : "Aplikasi Desktop",
+      image: "https://app.soluease.com/uploads/chatreply_41bedff4b4.png",
+      tags: ["Desktop Apps", "AI", "Cross-Platform"],
+      link: "https://soluease.gumroad.com/l/ChatReplyAI",
     },
     {
-      title: "FinStream Dashboard",
-      category: "Fintech",
-      image: "https://picsum.photos/seed/port3/800/600",
-      tags: ["Vue.js", "D3.js", "Go"],
-    },
-    {
-      title: "FinStream Dashboard",
-      category: "Fintech",
-      image: "https://picsum.photos/seed/port3/800/600",
-      tags: ["Vue.js", "D3.js", "Go"],
-    },
-    {
-      title: "FinStream Dashboard",
-      category: "Fintech",
-      image: "https://picsum.photos/seed/port3/800/600",
-      tags: ["Vue.js", "D3.js", "Go"],
-    },
-    {
-      title: "FinStream Dashboard",
-      category: "Fintech",
-      image: "https://picsum.photos/seed/port3/800/600",
-      tags: ["Vue.js", "D3.js", "Go"],
+      title: "Witch vs Zombies Game",
+      category: lang === "en" ? "Gamification" : "Gamifikasi",
+      image: "https://app.soluease.com/uploads/Frame_20_1_3bb7719694.png",
+      tags: ["Gamification", "Mobile Apps", "Unity"],
+      link: "https://play.google.com/store/apps/details?id=com.Soluease.WitchVsZombie&hl=en",
     },
   ];
 
@@ -55,12 +41,7 @@ export const Portfolio: React.FC = () => {
             <p className="text-lg text-slate-600">{t.portfolio.subtitle}</p>
           </div>
           <a
-            href="#portfolio"
-            onClick={(e) => {
-              e.preventDefault();
-              const portfolio = document.getElementById("portfolio");
-              if (portfolio) portfolio.scrollIntoView({ behavior: "smooth" });
-            }}
+            href="/portfolio"
             className="bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-800 transition-all flex items-center gap-2 cursor-pointer"
           >
             {t.portfolio.viewAll}
@@ -70,7 +51,13 @@ export const Portfolio: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {projects.map((project, i) => (
-            <div key={i} className="group cursor-pointer">
+            <a
+              key={i}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group cursor-pointer"
+            >
               <div className="relative overflow-hidden rounded-[2.5rem] mb-6 aspect-[4/3] bg-slate-100">
                 <img
                   src={project.image}
@@ -112,7 +99,7 @@ export const Portfolio: React.FC = () => {
                   <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

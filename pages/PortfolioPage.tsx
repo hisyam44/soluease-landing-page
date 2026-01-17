@@ -21,107 +21,45 @@ export const PortfolioPage: React.FC = () => {
   const allProjects = [
     {
       id: 1,
-      title: lang === "en" ? "Batam Logistic Hub" : "Hub Logistik Batam",
-      category: "Enterprise SaaS",
-      image: "https://picsum.photos/seed/port1/800/600",
-      tags: ["React", "Node.js", "PostgreSQL"],
+      title:
+        lang === "en" ? "Eventeevo Mobile App" : "Eventeevo Aplikasi Mobile",
+      category: lang === "en" ? "Mobile Apps" : "Aplikasi Mobile",
+      image: "https://app.soluease.com/uploads/Frame_19_1_7c41d144b1.png",
+      tags: ["Mobile Apps", "Google Play Store", "Apple Store"],
       description:
-        "A comprehensive logistics management platform designed for enterprise operations in Batam, enabling real-time tracking and optimization of shipments.",
+        "A comprehensive mobile application for event management, enabling users to discover, create, and manage events seamlessly.",
       year: "2024",
+      link: "https://eventeevo.com",
     },
     {
       id: 2,
-      title: "EcoEase Travel App",
-      category: "Mobile Application",
-      image: "https://picsum.photos/seed/port2/800/600",
-      tags: ["Flutter", "Firebase", "Maps API"],
+      title: "ChatReply Desktop App",
+      category: lang === "en" ? "Desktop Apps" : "Aplikasi Desktop",
+      image: "https://app.soluease.com/uploads/chatreply_41bedff4b4.png",
+      tags: ["Desktop Apps", "AI", "Cross-Platform"],
       description:
-        "An eco-friendly travel application that helps users find sustainable travel options and reduce their carbon footprint.",
+        "An intelligent desktop application powered by AI for smart and efficient communication. ChatReply helps streamline your messaging workflow.",
       year: "2024",
+      link: "https://soluease.gumroad.com/l/ChatReplyAI",
     },
     {
       id: 3,
-      title: "FinStream Dashboard",
-      category: "Fintech",
-      image: "https://picsum.photos/seed/port3/800/600",
-      tags: ["Vue.js", "D3.js", "Go"],
+      title: "Witch vs Zombies Game",
+      category: lang === "en" ? "Gamification" : "Gamifikasi",
+      image: "https://app.soluease.com/uploads/Frame_20_1_3bb7719694.png",
+      tags: ["Gamification", "Mobile Apps", "Unity"],
       description:
-        "A real-time financial analytics dashboard providing comprehensive insights into investment portfolios and market trends.",
-      year: "2023",
-    },
-    {
-      id: 4,
-      title: "HealthCare Portal",
-      category: "Healthcare",
-      image: "https://picsum.photos/seed/port4/800/600",
-      tags: ["React", "Python", "MongoDB"],
-      description:
-        "A comprehensive healthcare management system connecting patients with medical professionals for seamless consultation and record management.",
-      year: "2023",
-    },
-    {
-      id: 5,
-      title: "RetailSync Platform",
-      category: "E-commerce",
-      image: "https://picsum.photos/seed/port5/800/600",
-      tags: ["Next.js", "Stripe", "AWS"],
-      description:
-        "An omnichannel retail management platform integrating inventory, sales, and customer data across multiple storefronts.",
+        "An engaging mobile game built with Unity, featuring action-packed gameplay with witches battling zombies. Available on Google Play Store.",
       year: "2024",
-    },
-    {
-      id: 6,
-      title: "DataInsight AI",
-      category: "AI/ML",
-      image: "https://picsum.photos/seed/port6/800/600",
-      tags: ["Python", "TensorFlow", "FastAPI"],
-      description:
-        "Advanced AI-powered analytics platform that uses machine learning to predict market trends and consumer behavior.",
-      year: "2024",
-    },
-    {
-      id: 7,
-      title: "CloudDeploy DevOps",
-      category: "Infrastructure",
-      image: "https://picsum.photos/seed/port7/800/600",
-      tags: ["Kubernetes", "Docker", "Terraform"],
-      description:
-        "Enterprise-grade DevOps platform simplifying cloud infrastructure management and CI/CD deployment pipelines.",
-      year: "2023",
-    },
-    {
-      id: 8,
-      title: "MusicStream Platform",
-      category: "Entertainment",
-      image: "https://picsum.photos/seed/port8/800/600",
-      tags: ["React Native", "Node.js", "Redis"],
-      description:
-        "A streaming music platform with personalized recommendations powered by advanced algorithms and user behavior analysis.",
-      year: "2023",
-    },
-    {
-      id: 9,
-      title: "EduConnect LMS",
-      category: "Education",
-      image: "https://picsum.photos/seed/port9/800/600",
-      tags: ["React", "Django", "PostgreSQL"],
-      description:
-        "Comprehensive learning management system enabling institutions to deliver interactive online courses and track student progress.",
-      year: "2024",
+      link: "https://play.google.com/store/apps/details?id=com.Soluease.WitchVsZombie&hl=en",
     },
   ];
 
   const categories = [
     "all",
-    "Enterprise SaaS",
-    "Mobile Application",
-    "Fintech",
-    "Healthcare",
-    "E-commerce",
-    "AI/ML",
-    "Infrastructure",
-    "Entertainment",
-    "Education",
+    lang === "en" ? "Mobile Apps" : "Aplikasi Mobile",
+    lang === "en" ? "Desktop Apps" : "Aplikasi Desktop",
+    lang === "en" ? "Gamification" : "Gamifikasi",
   ];
 
   const filteredProjects = allProjects.filter((project) => {
@@ -238,7 +176,9 @@ export const PortfolioPage: React.FC = () => {
 
                     {/* View Details Link */}
                     <a
-                      href="#"
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-[#1d97c1] font-bold hover:gap-4 transition-all"
                     >
                       View Details
@@ -275,7 +215,7 @@ export const PortfolioPage: React.FC = () => {
               </p>
             </div>
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 text-center">
-              <div className="text-4xl font-bold text-[#1d97c1] mb-2">50+</div>
+              <div className="text-4xl font-bold text-[#1d97c1] mb-2">5+</div>
               <p className="text-slate-600 font-semibold">Team Members</p>
             </div>
           </div>
