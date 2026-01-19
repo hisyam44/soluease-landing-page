@@ -12,6 +12,27 @@ dist
 dist-ssr
 *.local
 
+# Python
+*.py
+*.pyc
+*.pyo
+*.pyd
+.Python
+python/
+bin/python*
+lib/python*
+include/python*
+pyvenv.cfg
+pip-log.txt
+pip-delete-this-directory.txt
+.venv
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
