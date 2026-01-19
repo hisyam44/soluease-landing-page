@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { registerServiceWorker } from "./src/service-worker-register";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -16,13 +17,16 @@ body.classList.remove(
   "bg-gradient-to-br",
   "from-pink-100",
   "via-blue-50",
-  "to-yellow-50"
+  "to-yellow-50",
 );
 body.style.overflowY = "auto";
+
+// Register service worker for PWA
+registerServiceWorker();
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
