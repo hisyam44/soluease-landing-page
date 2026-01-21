@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
                         if (links[idx]) {
                           e.preventDefault();
                           const el = document.getElementById(
-                            links[idx].replace("#", "")
+                            links[idx].replace("#", ""),
                           );
                           if (el) el.scrollIntoView({ behavior: "smooth" });
                         }
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#1d97c1]" />
-                <span>+62 853-2981-1585</span>
+                <span>+62 881-0805-16115</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#1d97c1]" />

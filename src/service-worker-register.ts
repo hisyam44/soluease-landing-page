@@ -1,24 +1,13 @@
-export function registerServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then((registration) => {
-          console.log("Service Worker registered successfully:", registration);
-        })
-        .catch((error) => {
-          console.log("Service Worker registration failed:", error);
-        });
-    });
-  }
-}
+// PWA caching can make dev changes feel stale. This helper clears any
+// existing registrations and caches so assets always come from the network.
+export async function disableServiceWorkers() {
+  if (!("serviceWorker" in navigator)) return;
 
-export function unregisterServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.getRegistrations().then((registrations) => {
-      registrations.forEach((registration) => {
-        registration.unregister();
-      });
-    });
-  }
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  await Promise.all(
+    registrations.map((registration) => registration.unregister()),
+  );
+
+  const cacheKeys = await caches.keys();
+  await Promise.all(cacheKeys.map((key) => caches.delete(key)));
 }

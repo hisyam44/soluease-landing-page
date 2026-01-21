@@ -267,7 +267,7 @@ export const PressKit: React.FC = () => {
                     href="tel:+6285329811585"
                     className="text-cyan-100 hover:text-white transition-colors"
                   >
-                    +62 853-2981-1585
+                    +62 881-0805-16115
                   </a>
                 </div>
               </div>
