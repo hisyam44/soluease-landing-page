@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { registerServiceWorker } from "./src/service-worker-register";
+import { disableServiceWorkers } from "./src/service-worker-register";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -21,8 +21,8 @@ body.classList.remove(
 );
 body.style.overflowY = "auto";
 
-// Register service worker for PWA
-registerServiceWorker();
+// Disable PWA caching so fresh builds show immediately
+disableServiceWorkers();
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
