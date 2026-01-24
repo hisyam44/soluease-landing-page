@@ -1,34 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ExternalLink, Tag } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import portfolioData from "../portfolio-data.json";
+
+interface Project {
+  id: number;
+  titleEn: string;
+  titleId: string;
+  categoryEn: string;
+  categoryId: string;
+  image: string;
+  tags: string[];
+  year: string;
+  link: string;
+}
 
 export const Portfolio: React.FC = () => {
   const { t, lang } = useLanguage();
+  const [projects, setProjects] = useState<Project[]>([]);
 
-  const projects = [
-    {
-      title:
-        lang === "en" ? "Eventeevo Mobile App" : "Eventeevo Aplikasi Mobile",
-      category: lang === "en" ? "Mobile Apps" : "Aplikasi Mobile",
-      image: "https://app.soluease.com/uploads/Frame_19_1_7c41d144b1.png",
-      tags: ["Mobile Apps", "Google Play Store", "Apple Store"],
-      link: "https://eventeevo.com",
-    },
-    {
-      title: "ChatReply Desktop App",
-      category: lang === "en" ? "Desktop Apps" : "Aplikasi Desktop",
-      image: "https://app.soluease.com/uploads/chatreply_41bedff4b4.png",
-      tags: ["Desktop Apps", "AI", "Cross-Platform"],
-      link: "https://soluease.gumroad.com/l/ChatReplyAI",
-    },
-    {
-      title: "Witch vs Zombies Game",
-      category: lang === "en" ? "Gamification" : "Gamifikasi",
-      image: "https://app.soluease.com/uploads/Frame_20_1_3bb7719694.png",
-      tags: ["Gamification", "Mobile Apps", "Unity"],
-      link: "https://play.google.com/store/apps/details?id=com.Soluease.WitchVsZombie&hl=en",
-    },
-  ];
+  useEffect(() => {
+    // Load and transform portfolio data, showing only top 3
+    const transformedProjects = portfolioData.projects
+      .slice(0, 3)
+      .map((project) => ({
+        ...project,
+        title: lang === "en" ? project.titleEn : project.titleId,
+        category: lang === "en" ? project.categoryEn : project.categoryId,
+      }));
+    setProjects(transformedProjects as any[]);
+  }, [lang]);
 
   return (
     <section id="portfolio" className="py-24 bg-white">

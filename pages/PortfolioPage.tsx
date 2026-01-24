@@ -3,6 +3,21 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ExternalLink, Tag, Search } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import portfolioData from "../portfolio-data.json";
+
+interface Project {
+  id: number;
+  titleEn: string;
+  titleId: string;
+  categoryEn: string;
+  categoryId: string;
+  image: string;
+  tags: string[];
+  descriptionEn: string;
+  descriptionId: string;
+  year: string;
+  link: string;
+}
 
 export const PortfolioPage: React.FC = () => {
   const { t, lang } = useLanguage();
@@ -18,48 +33,21 @@ export const PortfolioPage: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const allProjects = [
-    {
-      id: 1,
-      title:
-        lang === "en" ? "Eventeevo Mobile App" : "Eventeevo Aplikasi Mobile",
-      category: lang === "en" ? "Mobile Apps" : "Aplikasi Mobile",
-      image: "https://app.soluease.com/uploads/Frame_19_1_7c41d144b1.png",
-      tags: ["Mobile Apps", "Google Play Store", "Apple Store"],
-      description:
-        "A comprehensive mobile application for event management, enabling users to discover, create, and manage events seamlessly.",
-      year: "2024",
-      link: "https://eventeevo.com",
-    },
-    {
-      id: 2,
-      title: "ChatReply Desktop App",
-      category: lang === "en" ? "Desktop Apps" : "Aplikasi Desktop",
-      image: "https://app.soluease.com/uploads/chatreply_41bedff4b4.png",
-      tags: ["Desktop Apps", "AI", "Cross-Platform"],
-      description:
-        "An intelligent desktop application powered by AI for smart and efficient communication. ChatReply helps streamline your messaging workflow.",
-      year: "2024",
-      link: "https://soluease.gumroad.com/l/ChatReplyAI",
-    },
-    {
-      id: 3,
-      title: "Witch vs Zombies Game",
-      category: lang === "en" ? "Gamification" : "Gamifikasi",
-      image: "https://app.soluease.com/uploads/Frame_20_1_3bb7719694.png",
-      tags: ["Gamification", "Mobile Apps", "Unity"],
-      description:
-        "An engaging mobile game built with Unity, featuring action-packed gameplay with witches battling zombies. Available on Google Play Store.",
-      year: "2024",
-      link: "https://play.google.com/store/apps/details?id=com.Soluease.WitchVsZombie&hl=en",
-    },
-  ];
+  // Transform portfolio data with language support
+  const allProjects: (Project & {
+    title: string;
+    category: string;
+    description: string;
+  })[] = portfolioData.projects.map((project) => ({
+    ...project,
+    title: lang === "en" ? project.titleEn : project.titleId,
+    category: lang === "en" ? project.categoryEn : project.categoryId,
+    description: lang === "en" ? project.descriptionEn : project.descriptionId,
+  }));
 
   const categories = [
     "all",
-    lang === "en" ? "Mobile Apps" : "Aplikasi Mobile",
-    lang === "en" ? "Desktop Apps" : "Aplikasi Desktop",
-    lang === "en" ? "Gamification" : "Gamifikasi",
+    ...Array.from(new Set(allProjects.map((p) => p.category))),
   ];
 
   const filteredProjects = allProjects.filter((project) => {
