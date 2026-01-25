@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.soluease.solueasemobile",
+      "sha256_cert_fingerprints": [
+        "3C:9B:69:2E:6E:1F:1D:7F:2B:02:9B:9A:08:E4:E7:0D:6E:CA:F7:7E:9C:4E:96:FE:0B:20:20:CD:89:CD:0C:92"
+      ]
+    }
+  }
+]
