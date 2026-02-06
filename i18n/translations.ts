@@ -69,8 +69,8 @@ export const translations = {
           desc: "Seamless iOS and Android experiences tailored for Batam and global markets.",
         },
         {
-          title: "Cloud Solutions",
-          desc: "AWS/Google Cloud infrastructure setup that scales with your traffic.",
+          title: "Gamification",
+          desc: "Engaging game-like experiences that boost user interaction and retention.",
         },
         {
           title: "Custom CRM/ERP",
@@ -81,8 +81,8 @@ export const translations = {
           desc: "Transforming raw data into actionable business insights and visualizations.",
         },
         {
-          title: "UX/UI Research",
-          desc: "Deep-dive user research to ensure your product is effortless to use.",
+          title: "AI & Machine Learning",
+          desc: "Integrating intelligent systems for automation and personalized user experiences.",
         },
       ],
     },

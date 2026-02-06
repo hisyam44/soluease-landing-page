@@ -264,7 +264,7 @@ export const PressKit: React.FC = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Phone</h4>
                   <a
-                    href="tel:+6285329811585"
+                    href="tel:+62881080516115"
                     className="text-cyan-100 hover:text-white transition-colors"
                   >
                     +62 881-0805-16115
