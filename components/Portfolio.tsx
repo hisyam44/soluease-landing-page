@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ExternalLink, Tag } from "lucide-react";
+import { ExternalLink, Tag, ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import portfolioData from "../portfolio-data.json";
 
@@ -54,9 +54,7 @@ export const Portfolio: React.FC = () => {
           {projects.map((project, i) => (
             <a
               key={i}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/portfolio/${project.id}`}
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden rounded-[2.5rem] mb-6 aspect-[4/3] bg-slate-100">
@@ -97,7 +95,7 @@ export const Portfolio: React.FC = () => {
                   </div>
                 </div>
                 <div className="w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center group-hover:bg-[#1d97c1] group-hover:border-[#1d97c1] transition-all">
-                  <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
                 </div>
               </div>
             </a>

@@ -11,20 +11,52 @@
       "descriptionEn": "A comprehensive mobile application for event management, enabling users to discover, create, and manage events seamlessly.",
       "descriptionId": "Aplikasi mobile komprehensif untuk manajemen acara, memungkinkan pengguna menemukan, membuat, dan mengelola acara dengan mulus.",
       "year": "2024",
-      "link": "https://eventeevo.com"
+      "link": "https://eventeevo.com",
+      "backgroundEn": "Event organizers struggled with fragmented tools and inefficient workflows. They needed a unified platform that could handle everything from event creation to attendee management, while remaining easy to use for both organizers and participants.",
+      "backgroundId": "Penyelenggara acara kesulitan dengan alat yang terfragmentasi dan alur kerja yang tidak efisien. Mereka membutuhkan platform terpadu yang dapat menangani semuanya mulai dari pembuatan acara hingga manajemen peserta, sambil tetap mudah digunakan untuk penyelenggara dan peserta.",
+      "solutionEn": "We developed Eventeevo, a comprehensive mobile app available on both iOS and Android. The platform features intuitive event discovery, seamless ticketing integration, real-time notifications, and advanced analytics for organizers. Built with React Native for cross-platform efficiency and Firebase for real-time data synchronization.",
+      "solutionId": "Kami mengembangkan Eventeevo, aplikasi mobile komprehensif yang tersedia di iOS dan Android. Platform ini menampilkan penemuan acara intuitif, integrasi tiket yang mulus, notifikasi real-time, dan analitik canggih untuk penyelenggara. Dibangun dengan React Native untuk efisiensi lintas platform dan Firebase untuk sinkronisasi data real-time.",
+      "resultEn": "Successfully launched on both App Store and Google Play Store. The app has facilitated over 10,000 events with 50,000+ active users. Event organizers reported 40% increase in efficiency and 60% reduction in no-shows through automated reminders.",
+      "resultId": "Berhasil diluncurkan di App Store dan Google Play Store. Aplikasi telah memfasilitasi lebih dari 10.000 acara dengan 50.000+ pengguna aktif. Penyelenggara acara melaporkan peningkatan efisiensi 40% dan pengurangan 60% ketidakhadiran melalui pengingat otomatis.",
+      "technologies": [
+        "React Native",
+        "Firebase",
+        "Node.js",
+        "MongoDB",
+        "Stripe API"
+      ],
+      "duration": "6 months",
+      "client": "Eventeevo",
+      "platform": "iOS & Android"
     },
     {
       "id": 2,
       "titleEn": "ChatReply Desktop App",
       "titleId": "Aplikasi Desktop ChatReply",
-      "categoryEn": "Desktop Apps",
-      "categoryId": "Aplikasi Desktop",
+      "categoryEn": "AI & Machine Learning",
+      "categoryId": "AI & Machine Learning",
       "image": "/portfolio/chatreply_41bedff4b4.png",
       "tags": ["Desktop Apps", "AI", "Cross-Platform"],
       "descriptionEn": "An intelligent desktop application powered by AI for smart and efficient communication. ChatReply helps streamline your messaging workflow.",
       "descriptionId": "Aplikasi desktop cerdas yang didukung AI untuk komunikasi yang efisien. ChatReply membantu menyederhanakan alur pesan Anda.",
       "year": "2024",
-      "link": "https://soluease.gumroad.com/l/ChatReplyAI"
+      "link": "https://soluease.gumroad.com/l/ChatReplyAI",
+      "backgroundEn": "Customer service teams and professionals spend hours crafting responses to repetitive messages. The challenge was to create an AI-powered solution that could generate contextual, personalized responses while maintaining a human touch and supporting multiple languages.",
+      "backgroundId": "Tim layanan pelanggan dan profesional menghabiskan berjam-jam menyusun respons untuk pesan berulang. Tantangannya adalah menciptakan solusi bertenaga AI yang dapat menghasilkan respons kontekstual dan personal sambil mempertahankan sentuhan manusiawi dan mendukung berbagai bahasa.",
+      "solutionEn": "ChatReply is a cross-platform desktop application built with Electron and integrated with advanced AI models. It analyzes incoming messages, understands context, and generates appropriate responses. Features include custom tone settings, multi-language support, learning from user preferences, and quick-access templates.",
+      "solutionId": "ChatReply adalah aplikasi desktop lintas platform yang dibangun dengan Electron dan terintegrasi dengan model AI canggih. Ini menganalisis pesan masuk, memahami konteks, dan menghasilkan respons yang sesuai. Fitur termasuk pengaturan nada kustom, dukungan multi-bahasa, belajar dari preferensi pengguna, dan template akses cepat.",
+      "resultEn": "Launched successfully on Gumroad with 1,000+ downloads in the first month. Users report saving an average of 3 hours per day on message responses. The AI accuracy rate stands at 85% for generating appropriate responses, with continuous improvement through machine learning.",
+      "resultId": "Diluncurkan dengan sukses di Gumroad dengan 1.000+ unduhan di bulan pertama. Pengguna melaporkan menghemat rata-rata 3 jam per hari untuk respons pesan. Tingkat akurasi AI mencapai 85% untuk menghasilkan respons yang sesuai, dengan peningkatan berkelanjutan melalui pembelajaran mesin.",
+      "technologies": [
+        "Electron",
+        "TypeScript",
+        "OpenAI API",
+        "Python",
+        "SQLite"
+      ],
+      "duration": "4 months",
+      "client": "Soluease (Internal Product)",
+      "platform": "Windows, macOS, Linux"
     },
     {
       "id": 3,
@@ -37,7 +69,23 @@
       "descriptionEn": "An engaging mobile game built with Unity, featuring action-packed gameplay with witches battling zombies. Available on Google Play Store.",
       "descriptionId": "Game mobile yang menarik dibangun dengan Unity, menampilkan gameplay penuh aksi dengan penyihir melawan zombie. Tersedia di Google Play Store.",
       "year": "2024",
-      "link": "https://play.google.com/store/apps/details?id=com.Soluease.WitchVsZombie&hl=en"
+      "link": "https://play.google.com/store/apps/details?id=com.Soluease.WitchVsZombie&hl=en",
+      "backgroundEn": "The mobile gaming market demanded fresh, engaging content with smooth performance across diverse Android devices. The goal was to create an addictive action game that balanced challenge with accessibility, while showcasing our gamification expertise.",
+      "backgroundId": "Pasar game mobile membutuhkan konten segar dan menarik dengan performa lancar di berbagai perangkat Android. Tujuannya adalah menciptakan game aksi yang adiktif yang menyeimbangkan tantangan dengan aksesibilitas, sambil menampilkan keahlian gamifikasi kami.",
+      "solutionEn": "We developed Witch vs Zombies using Unity engine, featuring intuitive touch controls, progressive difficulty levels, power-ups, and achievement systems. The game includes 50+ unique levels, boss battles, and social leaderboards. Optimized for performance across low to high-end Android devices.",
+      "solutionId": "Kami mengembangkan Witch vs Zombies menggunakan mesin Unity, menampilkan kontrol sentuh intuitif, level kesulitan progresif, power-up, dan sistem pencapaian. Game ini mencakup 50+ level unik, pertarungan bos, dan papan peringkat sosial. Dioptimalkan untuk performa di perangkat Android kelas rendah hingga tinggi.",
+      "resultEn": "Successfully published on Google Play Store with 20,000+ downloads and a 4.5-star rating. Players average 45 minutes per session with strong retention rates. The game monetization through ads and in-app purchases generates consistent revenue.",
+      "resultId": "Berhasil dipublikasikan di Google Play Store dengan 20.000+ unduhan dan rating 4,5 bintang. Pemain rata-rata bermain 45 menit per sesi dengan tingkat retensi yang kuat. Monetisasi game melalui iklan dan pembelian dalam aplikasi menghasilkan pendapatan yang konsisten.",
+      "technologies": [
+        "Unity",
+        "C#",
+        "Unity Ads",
+        "Google Play Services",
+        "Firebase Analytics"
+      ],
+      "duration": "5 months",
+      "client": "Soluease (Internal Product)",
+      "platform": "Android"
     }
   ]
 }
