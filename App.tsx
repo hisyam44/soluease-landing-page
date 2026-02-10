@@ -13,6 +13,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import PressKit from "./pages/PressKit";
 import PortfolioPage from "./pages/PortfolioPage";
+import PortfolioDetail from "./pages/PortfolioDetail";
+import AboutUs from "./pages/AboutUs";
+import ValuesPage from "./pages/ValuesPage";
 
 const AppContent: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -51,6 +54,9 @@ const App: React.FC = () => {
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/press" element={<PressKit />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/portfolio/:id" element={<PortfolioDetail />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/values" element={<ValuesPage />} />
         </Routes>
       </LanguageProvider>
     </Router>

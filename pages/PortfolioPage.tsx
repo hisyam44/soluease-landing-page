@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
-import { ExternalLink, Tag, Search } from "lucide-react";
+import { ArrowRight, Tag, Search } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import portfolioData from "../portfolio-data.json";
 
@@ -164,13 +164,11 @@ export const PortfolioPage: React.FC = () => {
 
                     {/* View Details Link */}
                     <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`/portfolio/${project.id}`}
                       className="inline-flex items-center gap-2 text-[#1d97c1] font-bold hover:gap-4 transition-all"
                     >
                       View Details
-                      <ExternalLink className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -218,7 +216,7 @@ export const PortfolioPage: React.FC = () => {
               your business goals with innovative technology solutions.
             </p>
             <a
-              href="mailto:soluease@gmail.com"
+              href="mailto:hello@soluease.com"
               className="inline-block bg-white text-[#1d97c1] hover:bg-cyan-50 px-10 py-4 rounded-2xl font-bold transition-all"
             >
               Start Your Project

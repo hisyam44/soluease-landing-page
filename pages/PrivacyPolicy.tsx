@@ -133,7 +133,7 @@ export const PrivacyPolicy: React.FC = () => {
               </p>
               <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                 <p className="text-slate-700 font-semibold">Soluease</p>
-                <p className="text-slate-600">Email: soluease@gmail.com</p>
+                <p className="text-slate-600">Email: hello@soluease.com</p>
                 <p className="text-slate-600">Phone: +62 881-0805-16115</p>
               </div>
             </section>

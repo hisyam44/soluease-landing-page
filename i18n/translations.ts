@@ -106,13 +106,13 @@ export const translations = {
       tagline:
         "Batam's premier software house providing digital solutions with ease. Built for speed, efficiency, and reliability.",
       company: "Company",
-      links: ["About Us", "Our Team", "Careers", "Press Kit"],
+      links: ["About Us", "Our Team", "Values", "Press Kit"],
       services: "Services",
       serviceLinks: [
         "Web Development",
         "Mobile Engineering",
-        "Cloud Consulting",
-        "UI/UX Design",
+        "Gamification",
+        "AI & Machine Learning",
       ],
       getInTouch: "Get in Touch",
       address: "Batam, Kepulauan Riau, Indonesia.",
@@ -233,13 +233,13 @@ export const translations = {
       tagline:
         "Software house terpercaya di Batam yang bikin solusi digital jadi mudah. Cepat, efisien, dan bisa diandalkan.",
       company: "Perusahaan",
-      links: ["Tentang Kami", "Tim Kami", "Karir", "Press Kit"],
+      links: ["Tentang Kami", "Tim Kami", "Nilai Kami", "Press Kit"],
       services: "Layanan",
       serviceLinks: [
         "Web Development",
         "Mobile Engineering",
-        "Cloud Consulting",
-        "UI/UX Design",
+        "Gamifikasi",
+        "AI & Machine Learning",
       ],
       getInTouch: "Kontak",
       address: "Batam, Kepulauan Riau, Indonesia.",

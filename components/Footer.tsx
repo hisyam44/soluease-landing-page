@@ -57,23 +57,15 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               {t.footer.links.map((link: string, idx: number) => {
                 const links: { [key: number]: string } = {
-                  0: "#services",
-                  1: "#portfolio",
-                  2: "#values",
+                  0: "/about",
+                  1: "/about",
+                  2: "/values",
+                  3: "/press",
                 };
                 return (
                   <li key={link}>
                     <a
                       href={links[idx] || "#"}
-                      onClick={(e) => {
-                        if (links[idx]) {
-                          e.preventDefault();
-                          const el = document.getElementById(
-                            links[idx].replace("#", ""),
-                          );
-                          if (el) el.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
                       className="hover:text-[#1d97c1] transition-colors cursor-pointer"
                     >
                       {link}
@@ -123,7 +115,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#1d97c1]" />
-                <span>soluease@gmail.com</span>
+                <span>hello@soluease.com</span>
               </li>
             </ul>
           </div>

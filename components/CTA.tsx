@@ -33,7 +33,7 @@ export const CTA: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:soluease@gmail.com"
+                href="mailto:hello@soluease.com"
                 className="bg-white text-[#1d97c1] hover:bg-cyan-50 px-10 py-5 rounded-2xl font-bold text-lg shadow-xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <Send className="w-5 h-5 group-hover:-rotate-12 transition-transform" />

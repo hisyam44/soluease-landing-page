@@ -12,9 +12,9 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   const navLinks = [
     { name: t.nav.solutions, href: "#services" },
-    { name: t.nav.portfolio, href: "#portfolio" },
-    { name: t.nav.values, href: "#values" },
-    { name: t.nav.about, href: "#footer" },
+    { name: t.nav.portfolio, href: "/portfolio" },
+    { name: t.nav.values, href: "/values" },
+    { name: t.nav.about, href: "/about" },
   ];
 
   return (
