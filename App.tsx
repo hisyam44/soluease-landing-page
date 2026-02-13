@@ -16,6 +16,7 @@ import PortfolioPage from "./pages/PortfolioPage";
 import PortfolioDetail from "./pages/PortfolioDetail";
 import AboutUs from "./pages/AboutUs";
 import ValuesPage from "./pages/ValuesPage";
+import BrandGuidelines from "./pages/BrandGuidelines";
 
 const AppContent: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -57,6 +58,7 @@ const App: React.FC = () => {
           <Route path="/portfolio/:id" element={<PortfolioDetail />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/values" element={<ValuesPage />} />
+          <Route path="/brand" element={<BrandGuidelines />} />
         </Routes>
       </LanguageProvider>
     </Router>
