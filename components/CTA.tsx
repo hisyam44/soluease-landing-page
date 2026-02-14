@@ -40,8 +40,10 @@ export const CTA: React.FC = () => {
                 {t.cta.primary}
               </a>
               <a
-                href="tel:+62881080516115"
+                href="https://wa.me/62881080516115"
                 className="bg-transparent border-2 border-white/40 hover:border-white text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {t.cta.secondary}
               </a>

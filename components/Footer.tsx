@@ -30,12 +30,18 @@ export const Footer: React.FC = () => {
             <p className="leading-relaxed">{t.footer.tagline}</p>
             <div className="flex gap-4">
               {[
-                { Icon: Instagram, url: "https://instagram.com/soluease" },
+                {
+                  Icon: Instagram,
+                  url: "https://www.instagram.com/soluease_id/",
+                },
                 {
                   Icon: Linkedin,
                   url: "https://linkedin.com/company/soluease",
                 },
-                { Icon: Twitter, url: "https://twitter.com/soluease" },
+                {
+                  Icon: Twitter,
+                  url: "https://twitter.com/soluease_id",
+                },
               ].map(({ Icon, url }, i) => (
                 <a
                   key={i}

@@ -252,10 +252,10 @@ export const PressKit: React.FC = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Email</h4>
                   <a
-                    href="mailto:media@soluease.com"
+                    href="mailto:hello@soluease.com"
                     className="text-cyan-100 hover:text-white transition-colors"
                   >
-                    media@soluease.com
+                    hello@soluease.com
                   </a>
                 </div>
               </div>
