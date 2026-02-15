@@ -13,7 +13,8 @@
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-router-dom": "^6.20.0"
+    "react-router-dom": "^6.20.0",
+    "vite-plugin-static-copy": "^3.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
