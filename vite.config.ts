@@ -25,10 +25,26 @@ export default defineConfig(({ mode }) => {
         registerType: "autoUpdate",
         manifestFilename: "manifest.json",
         workbox: {
+          navigateFallback: "/index.html",
+          navigateFallbackDenylist: [
+            /^\/assets\//,
+            /^\/icon-/,
+            /^\/manifest\.json$/,
+          ],
+          cleanupOutdatedCaches: true,
+          clientsClaim: true,
+          skipWaiting: true,
           globPatterns: [
             "**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot}",
           ],
           runtimeCaching: [
+            {
+              urlPattern: ({ request }) => request.mode === "navigate",
+              handler: "NetworkFirst",
+              options: {
+                cacheName: "pages-cache",
+              },
+            },
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
               handler: "CacheFirst",
