@@ -17,6 +17,7 @@ import PortfolioDetail from "./pages/PortfolioDetail";
 import AboutUs from "./pages/AboutUs";
 import ValuesPage from "./pages/ValuesPage";
 import BrandGuidelines from "./pages/BrandGuidelines";
+import AuraFastPrivacyPolicy from "./pages/AuraFastPrivacyPolicy";
 
 const AppContent: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -52,6 +53,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<AppContent />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/privacy/aurafast" element={<AuraFastPrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/press" element={<PressKit />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
