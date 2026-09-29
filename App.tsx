@@ -19,6 +19,7 @@ import ValuesPage from "./pages/ValuesPage";
 import BrandGuidelines from "./pages/BrandGuidelines";
 import AuraFastPrivacyPolicy from "./pages/AuraFastPrivacyPolicy";
 import MindfulBellPrivacyPolicy from "./pages/MindfulBellPrivacyPolicy";
+import OceanicBlissPrivacyPolicy from "./pages/OceanicBlissPrivacyPolicy";
 
 const AppContent: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -58,6 +59,10 @@ const App: React.FC = () => {
           <Route
             path="/privacy/mindfulbell"
             element={<MindfulBellPrivacyPolicy />}
+          />
+          <Route
+            path="/privacy/oceanicbliss"
+            element={<OceanicBlissPrivacyPolicy />}
           />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/press" element={<PressKit />} />
